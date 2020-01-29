@@ -8,12 +8,15 @@ configure :development do
 end
 
 get '/' do
-  @usernames = [ 'ssaunier', 'Papillard' ]
+  @usernames = ['ssaunier', 'Papillard']
+  @recipes = ['ssaunier', 'Papillard']
   erb :index
 end
 
-get '/about' do
-  erb :about
+get '/list' do
+  @usernames = ['ssaunier', 'Papillard']
+  @recipes = ['Pizza', 'Tiramisu']
+  erb :list
 end
 
 get '/team/:username' do
